@@ -5,14 +5,18 @@ import Footer from './Footer';
 import AddItem from './AddItem';
 import SearchItem from './SearchItem';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem('shoppinglist'))
+    JSON.parse(localStorage.getItem('shoppinglist')) | []
   );
   const [newItem, setNewItem] = useState('');
   const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    console.log('updating items state');
+  }, [])
 
   const setAnSaveItems = (newItems) => {
     setItems(newItems);
