@@ -1,4 +1,4 @@
-# Shopping list app
+# Groceries list app
 
 npm start
 
